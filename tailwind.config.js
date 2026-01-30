@@ -8,4 +8,21 @@ export default {
     },
     plugins: [],
   }
-  
+  module.exports = {
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            50: '#f0fdf4',
+            100: '#dcfce7',
+            500: '#10b981', // emerald-500
+            600: '#059669', // emerald-600
+            700: '#047857', // emerald-700
+          }
+        },
+        fontFamily: {
+          'arabic': ['"Noto Naskh Arabic"', 'serif'],
+        }
+      }
+    }
+  }

@@ -5,11 +5,25 @@ import Surah from "../pages/Surah";
 
 export const router = createBrowserRouter([
   {
+    path: "/",
     element: <Layout />,
     children: [
-        { path: "/", element: <Home /> },
-        { path: "/quran", element: <Home /> },
-        { path: "/quran/:id", element: <Surah /> }
+      { 
+        index: true, 
+        element: <Home /> 
+      },
+      { 
+        path: "/quran", 
+        element: <Home /> // You might want to create a QuranList page here
+      },
+      { 
+        path: "/quran/:id", 
+        element: <Surah /> 
+      },
+      { 
+        path: "/hadith", 
+        element: <Home /> // You might want to create a HadithList page here
+      }
     ]
   }
 ]);
