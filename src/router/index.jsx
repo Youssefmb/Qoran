@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import Home from "../pages/Home";
-import Surah from "../pages/surah";
+import Surah from "../pages/Surah";
 
 export const router = createBrowserRouter([
   {
