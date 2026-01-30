@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import Home from "../pages/Home";
 import Surah from "../pages/Surah";
+import SurahList from "../pages/SurahList";
 
 export const router = createBrowserRouter([
   {
@@ -13,8 +14,12 @@ export const router = createBrowserRouter([
         element: <Home /> 
       },
       { 
-        path: "/quran", 
+        path: "/", 
         element: <Home /> // You might want to create a QuranList page here
+      },
+      { 
+        path: "/qoran", 
+        element: <SurahList /> // You might want to create a QuranList page here
       },
       { 
         path: "/quran/:id", 
