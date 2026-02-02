@@ -11,6 +11,7 @@ export default function Hadith() {
   useEffect(() => {
     async function getData() {
       const data = await fetchHadith();
+      console.log(data);
       setHadithData(data);
       setLoading(false);
     }
