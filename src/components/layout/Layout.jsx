@@ -3,13 +3,16 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 
 export default function Layout() {
-  return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-emerald-50/30 to-white">
-      <Header />
-      <main className="flex-grow">
-        <Outlet /> {/* This is the key change - replaces {children} */}
-      </main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="d-flex flex-column min-vh-100 bg-light">
+            <Header />
+
+            {/* Main content */}
+            <main className="flex-grow-1">
+                <Outlet /> {/* React Router outlet */}
+            </main>
+
+            <Footer />
+        </div>
+    );
 }

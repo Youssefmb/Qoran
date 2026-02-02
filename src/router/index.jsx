@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import Home from "../pages/Home";
-import Surah from "../pages/Surah";
-import SurahList from "../pages/SurahList";
-
+import Surah from "../pages/Quran/Surah";
+import SurahList from "../pages/Quran/SurahList";
+import Hadith from "../pages/Hadith/Hadith";
+import HadithList from "../pages/Hadith/HadithList";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -15,11 +16,11 @@ export const router = createBrowserRouter([
       },
       { 
         path: "/", 
-        element: <Home /> // You might want to create a QuranList page here
+        element: <Home /> 
       },
       { 
-        path: "/qoran", 
-        element: <SurahList /> // You might want to create a QuranList page here
+        path: "/quran", 
+        element: <SurahList /> 
       },
       { 
         path: "/quran/:id", 
@@ -27,7 +28,11 @@ export const router = createBrowserRouter([
       },
       { 
         path: "/hadith", 
-        element: <Home /> // You might want to create a HadithList page here
+        element: <Hadith/> 
+      },
+      { 
+        path: "/hadith/section/:id", 
+        element: <HadithList/> 
       }
     ]
   }

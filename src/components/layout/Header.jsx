@@ -1,19 +1,29 @@
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  return (
-    <header className="bg-white shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-semibold text-primary">
-          🕌 Quran & Hadith
-        </h1>
+    return (
+        <header className="bg-white shadow-sm">
+            <nav className="navbar navbar-expand-md container py-2">
+                {/* Brand */}
+                <Link className="navbar-brand fw-semibold fs-4" to="/">
+                    🕌 Quran & Hadith
+                </Link>
 
-        <nav className="space-x-6 text-gray-700">
-          <Link className="hover:text-primary" to="/">Home</Link>
-          <Link className="hover:text-primary" to="/quran">Qur’an</Link>
-          <Link className="hover:text-primary" to="/hadith">Hadith</Link>
-        </nav>
-      </div>
-    </header>
-  );
+                {/* Nav links */}
+                <div className="ms-auto">
+                    <ul className="navbar-nav flex-row gap-4">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/">Home</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/quran">Qur’an</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/hadith">Hadith</Link>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    );
 }

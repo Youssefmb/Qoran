@@ -1,10 +1,9 @@
 export default function Footer() {
     return (
-      <footer className="bg-white border-t mt-12">
-        <div className="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Quran & Hadith • Built with sincerity 🤍
-        </div>
-      </footer>
+        <footer className="bg-white border-top mt-5">
+            <div className="container py-3 text-center text-muted small">
+                © {new Date().getFullYear()} Quran & Hadith • Built with sincerity 🤍
+            </div>
+        </footer>
     );
-  }
-  
+}
