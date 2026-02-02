@@ -8,7 +8,7 @@
         `https://api.alquran.cloud/v1/surah/${id}/ar.alafasy`
       );
       const data = await res.json();
-      localStorage.setItem(`surah_${id}`, JSON.stringify(data));
+      localStorage.setItem(`surah_${id}`, JSON.stringify(data.data));
       return data.data;
     } catch (err) {
       console.error(err);
