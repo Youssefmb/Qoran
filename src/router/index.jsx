@@ -5,34 +5,33 @@ import Surah from "../pages/Quran/Surah";
 import SurahList from "../pages/Quran/SurahList";
 import Hadith from "../pages/Hadith/Hadith";
 import HadithList from "../pages/Hadith/HadithList";
+import RouterError from "../pages/RouterError";
+
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <RouterError />,
     children: [
-      { 
-        index: true, 
-        element: <Home /> 
+      {
+        index: true,
+        element: <Home />
       },
-      { 
-        path: "/", 
-        element: <Home /> 
+      {
+        path: "quran",
+        element: <SurahList />
       },
-      { 
-        path: "/quran", 
-        element: <SurahList /> 
+      {
+        path: "quran/:id",
+        element: <Surah />
       },
-      { 
-        path: "/quran/:id", 
-        element: <Surah /> 
+      {
+        path: "hadith",
+        element: <Hadith />
       },
-      { 
-        path: "/hadith", 
-        element: <Hadith/> 
-      },
-      { 
-        path: "/hadith/section/:id", 
-        element: <HadithList/> 
+      {
+        path: "hadith/section/:id",
+        element: <HadithList />
       }
     ]
   }
