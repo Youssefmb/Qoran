@@ -4,14 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "fetch:quran": "node scripts/fetch-quran.js",
-    "fetch:fetch-qoran-reciterList": "node scripts/fetch-qoran-reciterList.js",
-    "fetch:hadith": "node scripts/fetch-hadith.js",
-    "fetch:hadith-sections": "node scripts/fetch-hadith-sections.js",
-    "fetch:fetch-hadith-by-narrateurs": "node scripts/fetch-hadith-by-narrateurs.js",
-    "fetch:fetch-hadith-by-narrateur": "node scripts/fetch-hadith-by-narrateur.js",
-    "prebuild": "npm run fetch:quran && npm run fetch:hadith && npm run fetch:reciters && npm run fetch:fetch-qoran-reciterList && npm run fetch:fetch-hadith-by-narrateur && npm run fetch:fetch-hadith-by-narrateurs",
-    
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
