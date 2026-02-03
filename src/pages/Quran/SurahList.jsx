@@ -1,8 +1,10 @@
 import Container from "../../components/layout/Container";
 import surahs from "../../api/surahList.api.json";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Quran() {
+    const { identifier,name } = useParams();
+
     return (
         <Container>
             <div className="text-center mb-5">
@@ -18,7 +20,7 @@ export default function Quran() {
                     return (
                         <div key={surahId} className="col-12 col-sm-6 col-lg-4 col-xl-3">
                             <Link
-                                to={`/quran/${surahId}`}
+                                to={`/quran/${identifier}/${name}/${surahId}`}
                                 className="card h-100 text-decoration-none shadow-sm border-0 hover-shadow"
                             >
                                 <div className="card-body d-flex flex-column justify-content-between">

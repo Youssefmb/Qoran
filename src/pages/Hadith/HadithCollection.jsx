@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
 import Container from "../../components/layout/Container";
 import Loader from "../../components/common/Loader";
-import { fetchHadithSection } from "../../api/hadithSection";
-import { useParams } from "react-router-dom";
+// import { fetchHadithSection } from "../../api/hadithSection"; // import your API function
 
-export default function HadithList() {
+export default function HadithCollection({ sectionId = 1 }) {
   const [hadiths, setHadiths] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [expandedHadith, setExpandedHadith] = useState(null);
-  const { name, identifier, id } = useParams();
+  const [expandedHadith, setExpandedHadith] = useState(null); // currently expanded hadith number
 
   useEffect(() => {
-    async function loadHadiths(name, identifier, id) {
+    async function loadHadiths(id) {
       setLoading(true);
       try {
-        const data = await fetchHadithSection(id, name, identifier);
+        // const data = await fetchHadithSection(id); // use the external function
         setHadiths(data.hadiths || []);
       } catch (err) {
         console.error(err);
@@ -24,8 +22,8 @@ export default function HadithList() {
       }
     }
 
-    loadHadiths(name, identifier, id );
-  }, []);
+    loadHadiths(sectionId);
+  }, [sectionId]);
 
   const toggleHadith = (hadithNumber) => {
     setExpandedHadith(expandedHadith === hadithNumber ? null : hadithNumber);

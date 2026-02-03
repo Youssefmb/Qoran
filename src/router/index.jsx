@@ -6,7 +6,8 @@ import SurahList from "../pages/Quran/SurahList";
 import Hadith from "../pages/Hadith/Hadith";
 import HadithList from "../pages/Hadith/HadithList";
 import RouterError from "../pages/RouterError";
-
+import Reciters from "../pages/Quran/Reciters";
+import HadithBook from "../pages/Hadith/hadithBook";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -19,10 +20,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "quran",
+        element: <Reciters />
+      },
+      {
+        path: "quran/:identifier/:name",
         element: <SurahList />
       },
       {
-        path: "quran/:id",
+        path: "quran/:identifier/:name/:id",
         element: <Surah />
       },
       {
@@ -30,9 +35,13 @@ export const router = createBrowserRouter([
         element: <Hadith />
       },
       {
-        path: "hadith/section/:id",
+        path: "hadith/:name",
+        element: <HadithBook />
+      },
+      {
+        path: "hadith/:name/:identifier/:id",
         element: <HadithList />
-      }
+      },
     ]
   }
 ]);
