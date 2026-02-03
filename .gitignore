@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Generated Quran & Hadith data
+public/hadith-by-naratteur/
+public/naratteurs/
+public/qoran/
+public/quran/
+
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
